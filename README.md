@@ -1,5 +1,17 @@
 # SQL
 
+## ER-D Entity Relationalship Diagram
+![ER-D](ER-D.png)
+
+Un diagrama entidad relación (también conocido como diagrama ER o diagrama ERD o 
+simplemente ERD) muestra cómo interactúan las entidades (personas, objetos y conceptos). 
+Estos modelos conceptuales de datos ayudan a desarrolladores y diseñadores a visualizar 
+las relaciones entre elementos clave del software.
+
+El diagrama en sí es un tipo de diagrama de flujo. Es un modelo lógico que muestra cómo 
+fluyen los datos de una entidad a otra. Con este formato fácil de seguir, los desarrolladores 
+y diseñadores de software pueden visualizar claramente la estructura de un sistema.
+
 ## Estructura basica de una consulta SQL:
     SELECT ColumnaUno, ColumnaDos ...
     FROM Nombre_Tabla 
@@ -69,8 +81,9 @@ Se utiliza para comparar un valor con un valor NULL.
 Busca la singularidad en cada fila de una tabla determinada (sin duplicados).
 
 # Esquema de bases de datos:
+![Esquema conceptual DB](ConceptualSchema.png)
 
-Para crear la base de datos del restaurante, la sintaxis CREATE DATABASE SQL es la siguiente:
+Para crear la base de datos de un restaurante, la sintaxis SQL es la siguiente:
 
     CREATE DATABASE restaurant;
 
