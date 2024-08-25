@@ -11,6 +11,10 @@
   - [Actualizar un registro de una tabla](#actualizar-un-registro-de-una-tabla)
 - [Operadores logicos](#operadores-lógicos)
 - [Esquema de bases de datos](#esquema-de-bases-de-datos)
+- [Normalizacion de bases de datos](#normalizacion-de-bases-de-datos)
+  - [Primera forma normal](#primera-forma-normal) 
+  - [Segunda forma normal](#segunda-forma-normal)
+  - [Tercera forma normal](#tercera-forma-normal)
 
 ## ER-D Entity Relationalship Diagram:
 ![ER-D](./images/ER-D.png)
@@ -203,3 +207,36 @@ id_pedido e id_elemento_menú, y está vinculada con las tablas pedido_mesa y el
 Estas sentencias CREATE TABLE elaboran todas las tablas de la base de datos de reservas. Es importante 
 tener en cuenta la manera en la que se establecen las relaciones entre las tablas. Cada tabla se define 
 con una clave principal y, a su vez, se convierte en la clave externa de la tabla relacionada.
+
+# Normalizacion de bases de datos
+
+El proceso de normalización pretende minimizar las duplicaciones de datos, evitar errores durante las 
+modificaciones de datos y simplificar las consultas de datos desde la base de datos. Las tres formas 
+fundamentales de normalización se conocen como:
+
+    Primera forma normal (1NF)
+    Segunda forma normal (2NF)
+    Tercera forma normal (3NF)
+
+## Primera forma normal:
+#### Regla de atomicidad de los datos: 
+La regla de atomicidad de datos significa que solo puede haber un único valor 
+de instancia del atributo de columna en cualquier celda de la tabla.
+
+## Segunda forma normal:
+En la segunda forma normal, debe evitar cualquier relación de dependencia parcial entre datos. La 
+dependencia parcial se refiere a tablas con una clave principal compuesta. Es decir, una clave que 
+consta de una combinación de dos o más columnas, donde un valor de atributo no clave depende solo de 
+una parte de la clave compuesta.
+
+## Tercera forma normal:
+Para que una relación en una base de datos esté en la tercera forma normal, ya debe estar en la segunda 
+forma normal (2NF). 
+
+Además, no debe tener dependencia transitiva. Esto significa que cualquier atributo
+que no sea clave de la tabla de cirugía puede no depender funcionalmente de otro atributo no clave en la 
+misma tabla. 
+
+
+
+
