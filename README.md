@@ -1,7 +1,19 @@
 # SQL
 
-## ER-D Entity Relationalship Diagram
-![ER-D](ER-D.png)
+# Indice
+
+- [ER-D Entity Relationalship diagram](#er-d-entity-relationalship-diagram)
+- [Estructura basica de una consulta SQL](#estructura-basica-de-una-consulta-sql)
+  - [Crear una base de datos](#crear-una-base-de-datos)
+  - [Crear una nueva tabla](#crear-una-nueva-tabla)
+  - [Insertar datos en una tabla](#insertar-datos-en-una-tabla)
+  - [Eliminar registros de una tabla](#eliminar-registros-de-una-tabla)
+  - [Actualizar un registro de una tabla](#actualizar-un-registro-de-una-tabla)
+- [Operadores logicos](#operadores-lógicos)
+- [Esquema de bases de datos](#esquema-de-bases-de-datos)
+
+## ER-D Entity Relationalship Diagram:
+![ER-D](./images/ER-D.png)
 
 Un diagrama entidad relación (también conocido como diagrama ER o diagrama ERD o 
 simplemente ERD) muestra cómo interactúan las entidades (personas, objetos y conceptos). 
@@ -81,7 +93,7 @@ Se utiliza para comparar un valor con un valor NULL.
 Busca la singularidad en cada fila de una tabla determinada (sin duplicados).
 
 # Esquema de bases de datos:
-![Esquema conceptual DB](ConceptualSchema.png)
+![Esquema conceptual DB](./images/ConceptualSchema.png)
 
 Para crear la base de datos de un restaurante, la sintaxis SQL es la siguiente:
 
