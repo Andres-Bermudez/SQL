@@ -15,6 +15,10 @@
   - [Primera forma normal](#primera-forma-normal) 
   - [Segunda forma normal](#segunda-forma-normal)
   - [Tercera forma normal](#tercera-forma-normal)
+- [PostgreSQL](#postgresql) 
+  - [Comandos de navegacion y consulta](#comandos-de-navegación-y-consulta-de-información) 
+  - [Comandos de inspeccion y ejecucion](#comandos-de-inspección-y-ejecución)
+  - [Comandos para debug y optimizacion](#comandos-para-debug-y-optimización)
 
 ## ER-D Entity Relationalship Diagram:
 ![ER-D](./images/ER-D.png)
@@ -218,16 +222,26 @@ fundamentales de normalización se conocen como:
     Segunda forma normal (2NF)
     Tercera forma normal (3NF)
 
-## Primera forma normal:
-#### Regla de atomicidad de los datos: 
-La regla de atomicidad de datos significa que solo puede haber un único valor 
+#### Regla de atomicidad de los datos:
+La regla de atomicidad de datos significa que solo puede haber un único valor
 de instancia del atributo de columna en cualquier celda de la tabla.
+
+## Primera forma normal:
+
+  - Todos los atributos deben tener valores atomicos.
+  - No deben existir registros duplicados.
+  - No deben haber registros multivaluados.
+
+Las columnas repetidas deben eliminarse y colocarse en tablas separadas.
 
 ## Segunda forma normal:
 En la segunda forma normal, debe evitar cualquier relación de dependencia parcial entre datos. La 
 dependencia parcial se refiere a tablas con una clave principal compuesta. Es decir, una clave que 
 consta de una combinación de dos o más columnas, donde un valor de atributo no clave depende solo de 
 una parte de la clave compuesta.
+
+  - La base de datos ya debe estar en primera forma normal.
+  - Todos los atributos no clave deben depender por completo de cualquier clave candidata.
 
 ## Tercera forma normal:
 Para que una relación en una base de datos esté en la tercera forma normal, ya debe estar en la segunda 
@@ -236,6 +250,57 @@ forma normal (2NF).
 Además, no debe tener dependencia transitiva. Esto significa que cualquier atributo
 que no sea clave de la tabla de cirugía puede no depender funcionalmente de otro atributo no clave en la 
 misma tabla. 
+
+# PostgreSQL
+La consola en PostgreSQL es una herramienta muy potente para crear, administrar y depurar nuestra base de 
+datos. podemos acceder a ella después de instalar PostgreSQL y haber seleccionado la opción de instalar
+la consola junto a la base de datos.
+
+PostgreSQL está más estrechamente acoplado al entorno UNIX que algunos otros sistemas de bases de datos,
+utiliza las cuentas de usuario nativas para determinar quién se conecta a ella (de forma predeterminada). 
+El programa que se ejecuta en la consola y que permite ejecutar consultas y comandos se llama psql, psql 
+es la terminal interactiva para trabajar con PostgreSQL, es la interfaz de línea de comando o consola principal, 
+así como PgAdmin es la interfaz gráfica de usuario principal de PostgreSQL.
+
+## Comandos de navegación y consulta de información
+
+    \c Saltar entre bases de datos
+
+    \l Listar base de datos disponibles
+
+    \dt Listar las tablas de la base de datos
+
+    \d <nombre_tabla> Describir una tabla
+
+    \dn Listar los esquemas de la base de datos actual
+
+    \df Listar las funciones disponibles de la base de datos actual
+    
+    \dv Listar las vistas de la base de datos actual
+
+    \du Listar los usuarios y sus roles de la base de datos actual
+
+## Comandos de inspección y ejecución
+
+    \g Volver a ejecutar el comando ejecutando justo antes
+
+    \s Ver el historial de comandos ejecutados
+
+    \s <nombre_archivo> Si se quiere guardar la lista de comandos ejecutados en un archivo de texto plano
+
+    \i <nombre_archivo> Ejecutar los comandos desde un archivo
+
+    \e Permite abrir un editor de texto plano, escribir comandos y ejecutar en lote. \e abre el editor de texto, escribir allí todos los comandos, luego guardar los cambios y cerrar, al cerrar se ejecutarán todos los comandos guardados.
+
+    \ef Equivalente al comando anterior pero permite editar también funciones en PostgreSQL
+
+## Comandos para debug y optimización
+
+    \timing Activar / Desactivar el contador de tiempo por consulta
+
+## Comandos para cerrar la consola
+
+    \q Cerrar la consola
 
 
 
